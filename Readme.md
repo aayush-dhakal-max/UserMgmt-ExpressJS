@@ -16,7 +16,7 @@ Before you begin, ensure you have the following installed on your system:
 1. Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/aayush-dhakal-max/UserMgmt-ExpressJS.git
 ```
 
 ## Features
