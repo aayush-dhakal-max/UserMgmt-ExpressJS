@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheet/navbar.css" />
+    <link rel="stylesheet" href="./stylesheet/search_user.css" />
+    <title>User Search</title>
+  </head>
+  <body>
+    <%- include("./partials/loggedinNavbar.ejs") %>
+    <br />
+    <center>
+      <h1>Search to view other users profile</h1>
+      <br />
+      <input
+        type="text"
+        id="search"
+        placeholder="Type single string and press ENTER"
+      />
+    </center>
+    <div class="box">
+      <h1></h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <!-- <th>Email</th> -->
+            <th>Avatar</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="display"></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="./javascript/search_user.js"></script>
+</html>

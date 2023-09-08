@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheet/other_user_profile.css" />
+    <link rel="stylesheet" href="../stylesheet/navbar.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('./partials/loggedinNavbar.ejs') %>
+    <div class="profile-container">
+      <img class="avatar" src="<%= avatar %>" alt="user avatar" />
+      <h1 class="full-name"><%= fname %> <%= lname %></h1>
+      <h2 class="designation"><%= designation %> at <%= company %></h2>
+      <h3>Know About Me:</h3>
+      <p class="bio"><%= bio %></p>
+    </div>
+  </body>
+</html>

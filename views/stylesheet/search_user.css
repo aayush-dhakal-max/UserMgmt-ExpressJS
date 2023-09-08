@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+/* Style for the search box */
+#search {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 35%;
+  margin-bottom: 10px;
+}
+
+/* Style for the box containing the table */
+.box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Style for the table */
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+/* Style for the table header */
+th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Style for the table cells */
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Style for the table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* .avatar-image {
+  margin: auto;
+  width: 120px;
+  border-radius: 50px;
+} */
+
+.avatar-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  border: 5px solid #c1c1c1;
+}
+
+#view-button {
+  padding: 8px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 20px;
+}
+
+#view-button:hover {
+  background-color: #1a881e;
+}

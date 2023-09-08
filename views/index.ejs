@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My E-commerce Site</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheet/index.css" />
+    <link rel="stylesheet" href="./stylesheet/navbar.css" />
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <section id="hero">
+      <h1>Welcome to My E-commerce Site</h1>
+      <p>Discover our latest collection of products</p>
+      <button>Shop Now</button>
+    </section>
+
+    <section id="featured-products">
+      <h2>Featured Products</h2>
+      <div class="product">
+        <img src="./image/echodot.jpg" alt="Product 1" />
+        <h3>Amazon Echo Dot</h3>
+        <p>
+          The Echo Dot is a smart speaker that connects to Amazon's virtual
+          assistant, Alexa. It allows you to control your smart home devices,
+          play music, ask questions, set alarms, and more, all using your voice.
+          The compact design makes it easy to place in any room of your home.
+        </p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./image/iphone13.jpg" alt="Product 2" />
+        <h3>Apple iPhone 13</h3>
+        <p>
+          The iPhone 13 is the latest model in Apple's popular smartphone
+          lineup. It features a stunning OLED display, an A15 Bionic chip, and
+          up to 1TB of storage. It also boasts improved cameras and longer
+          battery life, making it a great choice for anyone in the market for a
+          new phone.
+        </p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./image/nikeair.jpg" alt="Product 3" />
+        <h3>Nike Air Zoom Pegasus 38</h3>
+        <p>
+          The Air Zoom Pegasus 38 is a popular running shoe from Nike. It
+          features a breathable mesh upper, responsive cushioning, and a durable
+          rubber outsole. It's designed for runners of all levels, and the
+          stylish design means it can also be worn for casual everyday use.
+        </p>
+        <button>Add to Cart</button>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form>
+        <input type="email" placeholder="Enter your email address" />
+        <button>Subscribe</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 My E-commerce Site</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheet/dashboard.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
+  </head>
+  <body>
+    <%- include("./partials/loggedinNavbar.ejs") %>
+    <div class="container">
+      <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+        <div class="profile-tab-nav border-right">
+          <div class="p-4">
+            <div class="img-circle text-center mb-3">
+              <img src="<%= avatar %>" alt="Image" class="shadow" />
+            </div>
+            <h4 class="text-center"><%= fname %> <%= lname %></h4>
+          </div>
+          <div
+            class="nav flex-column nav-pills"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <a
+              class="nav-link active"
+              id="account-tab"
+              data-toggle="pill"
+              href="#account"
+              role="tab"
+              aria-controls="account"
+              aria-selected="true"
+            >
+              <i class="fa fa-home text-center mr-1"></i>
+              Account
+            </a>
+            <a
+              class="nav-link"
+              id="password-tab"
+              data-toggle="pill"
+              href="#password"
+              role="tab"
+              aria-controls="password"
+              aria-selected="false"
+            >
+              <i class="fa fa-key text-center mr-1"></i>
+              Password
+            </a>
+          </div>
+        </div>
+        <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+          <!-- Form for User information -->
+          <form
+            method="post"
+            action="/changeuserinfo"
+            class="tab-pane fade show active"
+            id="account"
+            role="tabpanel"
+            aria-labelledby="account-tab"
+          >
+            <center><p class="error"><%- error[0] %></p></center>
+            <h3 class="mb-4">Account Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input
+                    name="fname"
+                    type="text"
+                    class="form-control"
+                    value="<%= fname %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input
+                    name="lname"
+                    type="text"
+                    class="form-control"
+                    value="<%= lname %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input
+                    id="disabled_input"
+                    readonly
+                    tabindex="-1"
+                    name="email"
+                    type="text"
+                    class="form-control"
+                    value="<%= userEmail %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Phone number</label>
+                  <input
+                    name="phonenum"
+                    type="text"
+                    class="form-control"
+                    value="<%= phonenum %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Company</label>
+                  <input
+                    name="company"
+                    type="text"
+                    class="form-control"
+                    value="<%= company %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Designation</label>
+                  <input
+                    name="designation"
+                    type="text"
+                    class="form-control"
+                    value="<%= designation %>"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Bio</label>
+                  <textarea
+                    name="bio"
+                    placeholder="Enter Your Bio here"
+                    class="form-control"
+                    rows="4"
+                  >
+<%= bio %></textarea
+                  >
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+
+          <!-- Form for password -->
+          <form
+            method="post"
+            action="/changepassword"
+            class="tab-pane fade"
+            id="password"
+            role="tabpanel"
+            aria-labelledby="password-tab"
+          >
+            <center><p class="error"><%= error[0] %></p></center>
+            <h3 class="mb-4">Password Settings</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Old password</label>
+                  <input
+                    required
+                    name="oldpass"
+                    type="password"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>New password</label>
+                  <input
+                    required
+                    name="password"
+                    type="password"
+                    class="form-control"
+                  />
+                  <input
+                    type="hidden"
+                    name="email"
+                    readonly
+                    value="<%= userEmail %>"
+                  />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      const errors = document.getElementsByClassName("error");
+      Array.from(errors).forEach((error) => {
+        function removeError() {
+          error.remove();
+        }
+        if (error.textContent) {
+          setTimeout(removeError, 3000);
+        } else {
+          error.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
